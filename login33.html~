@@ -1,0 +1,170 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  h1
+ {
+   text-transform: capitalize;
+text-align: center;
+font-size: 50px;
+font-family: Georgia;
+font-style: italic;
+font-weight: bold;
+ background: linear-gradient(#ECF14A  ,#E3E4CF  );
+ color: black;
+ text-shadow: 2px 4px #FF0000;
+ font-size: 50px;
+position:static;
+padding: 0px;
+ }
+ #login,#signup
+ {
+   background: linear-gradient(#ECF14A  ,#E3E4CF  );
+ }
+  .modal-header, h4, .close {
+      background-color:#B4DEE9;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
+  h2
+  {
+      text-shadow: 2px 4px #FF0000;
+  }
+  body
+  {
+  background: linear-gradient(#676962,#BAF03E);
+  }
+  #myModal22
+  {
+background-color: #49DBF5 ;
+  }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Single Page App</h1>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn" id="login" data-toggle="modal" data-target="#myModal">Login</button>
+  <button type="button" class="btn" id="signup" data-toggle="modal" data-target="#myModal1">Sign up</button>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content" id="myModal22">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close btn-danger" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form">
+            <div class="form-group">
+              <label for="emaillog"><span class="glyphicon glyphicon-user"></span>Email</label>
+              <input type="text" class="form-control" id="emaillog" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="passlog"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="text" class="form-control" id="passlog" placeholder="Enter password">
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="" checked>Remember me</label>
+            </div>
+              <button type="submit" class="btn btn-info btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content" id="myModal22">
+        <div class="modal-header" style="padding:35px 50px;">
+           <button type="button" class="close btn-danger" data-dismiss="modal">&times;</button>
+          <h4>Register</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form">
+            <div class="form-group">
+              <label for="userreg">Enter Name</label>
+              <input type="text" class="form-control" id="userreg" placeholder="Enter name" required>
+            </div>
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span>Email</label>
+              <input type="text" class="form-control" id="emailreg" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+              <label for="passreg"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="password" class="form-control" id="passreg" placeholder="Enter password" required>
+            </div>
+            <div class="form-group">
+              <label for="repassreg"><span class="glyphicon glyphicon-eye-open"></span>ReenterPassword</label>
+              <input type="password" class="form-control" id="repassreg" placeholder="ReEnter password" required>
+            </div>
+              <button type="submit" class="btn btn-info btn-block" id="register" onclick="register1()"><span class="glyphicon glyphicon-off"></span>Register</button>
+              <button type="reset" class="btn btn-info btn-block"></span>Reset</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// $(document).ready(function(){
+//     $("#login").click(function(){
+//         $("#myModal").modal();
+//         $('input').prop('required',true);
+//     });
+//
+//     $("#signup").click(function(){
+//         $("#myModal1").modal();
+//     });
+// });
+
+function register1()
+ {
+   var temp=[];
+   var userdetail={};
+   var name=$("#userreg").val();
+   var email=$("#emailreg").val();
+   var password=$("#passreg").val();
+   var repass=$("#repassreg").val();
+   sessionStorage.name1=name;
+   sessionStorage.email=email;
+   sessionStorage.password=password;
+   sessionStorage.repassword=repass;
+   userdetail.name1 =name;
+   userdetail.email=email;
+   userdetail.password=password;
+  // temp[temp.length]=userdetail;
+   console.log(JSON.stringify(temp));
+   abc=JSON.parse(sessionStorage.getItem("user11"));
+   if(abc!==null)
+   {
+     temp=abc;
+     temp[temp.length]=userdetail;
+      if (typeof(Storage) !== undefined) {
+sessionStorage.setItem('user11',JSON.stringify(temp));
+}
+}else {
+   temp[temp.length]=userdetail;
+    if (typeof(Storage) !== undefined) {
+   sessionStorage.setItem('user11',JSON.stringify(temp));
+}
+}
+}
+</script>
+
+</body>
+</html>
+
