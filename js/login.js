@@ -81,6 +81,7 @@ sessionStorage.setItem('user11',JSON.stringify(temp));
 }
 alert("data inserted successfully");
 $('#register').attr("type","reset");
+backToHome();
 }
 });
 
@@ -193,5 +194,29 @@ $('#login').click(function()
 });
 $('#signup').click(function(){
   nextSignup();
+});
+function backToHome()
+{
+  $.ajax({
+    url:"index.html",
+    type:"GET",
+    datatype:'html',
+    success:function(response)
+    {
+    console.log('page was not loaded',response);
+    $('body').html(response);
+  },
+  error:function(error){
+    console.log('page was not loaded',error);
+  },
+  complete:function(xhr,status)
+  {
+    console.log('request is completed');
+  }
+});
+}
+$('#backtohome').click(function()
+{
+  backToHome();
 });
 });
