@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <style>
+  h1
+{
+ text-transform: capitalize;
+text-align: center;
+font-size: 50px;
+font-family: Georgia;
+font-style: italic;
+font-weight: bold;
+background: linear-gradient(#ECF14A  ,#E3E4CF  );
+color: black;
+text-shadow: 2px 4px #FF0000;
+font-size: 50px;
+position:static;
+padding: 0px;
+}
+  form
+  {
+    width:40%;
+    height:auto;
+    border:1px solid white;
+    padding-left:20px;
+    padding-top::20px;
+    padding-right:20px;
+    padding-bottom:20px;
+    background-color: gray;
+  margin: 0 auto;
+  margin-top:20px;
+  }
+  </style>
+  <body>
+            <form role="form">
+              <h1>Sign up</h1>
+              <div class="form-group">
+                <label for="userreg">Enter Name</label>
+                <input type="text" class="form-control" id="userreg" placeholder="Enter name" required>
+              </div>
+              <div class="form-group">
+                <label for="usrname"><span class="glyphicon glyphicon-user"></span>Email</label>
+                <input type="text" class="form-control" id="emailreg" placeholder="Enter email" required>
+              </div>
+              <div class="form-group">
+                <label for="passreg"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                <input type="password" class="form-control" id="passreg" placeholder="Enter password" required>
+              </div>
+              <div class="form-group">
+                <label for="repassreg"><span class="glyphicon glyphicon-eye-open"></span>ReenterPassword</label>
+                <input type="password" class="form-control" id="repassreg" placeholder="ReEnter password" required>
+              </div>
+                <button type="button" class="btn btn-info btn-block" id="register" ><span class="glyphicon glyphicon-off"></span>Register</button>
+                <button type="reset" class="btn btn-info btn-block">Reset</button>
+            </form>
+
+            <script src="/js/login.js"></script>
+
+  </body>
+</html>
